@@ -2,10 +2,9 @@
 
 @forelse($customers as $customer)
     <div>
-        {{ $customer->name }}
-    </div>
-    <div>
-        {{ $customer->email }}
+        <a href="/customers/{{ $customer->id }}/show">
+            {{ $customer->name }}
+        </a>
     </div>
 
 @empty
