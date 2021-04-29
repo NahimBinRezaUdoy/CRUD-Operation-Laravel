@@ -11,3 +11,6 @@
 @empty
     <p>No Customer to show</p>
 @endforelse
+
+<br>
+<a href="/customers/create">Add New Customer</a>
