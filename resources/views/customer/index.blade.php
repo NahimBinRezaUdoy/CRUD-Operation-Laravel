@@ -12,4 +12,6 @@
 @endforelse
 
 <br>
-<a href="/customers/create">Add New Customer</a>
+<button>
+    <a href="/customers/create">Add New Customer</a>
+</button>

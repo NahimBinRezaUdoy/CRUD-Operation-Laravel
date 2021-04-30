@@ -2,12 +2,19 @@
 
 
 <div>
-    {{ $customer->name }}
+    <h3>Name : {{ $customer->name }}</h3>
+
 </div>
 
 <div>
-    {{ $customer->email }}
+    <h3>Email : {{ $customer->email }}</h3>
 </div>
 
-<br>
-<a href="#">Edit Details</a>
+<div>
+    <h3>Created : {{ $customer->created_at->diffForHumans() }}</h3>
+</div>
+
+
+<a href="/customers/{{ $customer->id }}/edit">
+    <button>Edit</button>
+</a>

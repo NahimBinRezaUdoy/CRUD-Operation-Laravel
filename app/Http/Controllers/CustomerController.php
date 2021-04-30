@@ -30,8 +30,20 @@ class CustomerController extends Controller
         return redirect()->route('customer.index');
     }
 
+    // public function show($customer)
+    // {
+    //     $customerDetails = Customer::findOrFail($customer);
+
+    //     return view('customer.show', compact('customerDetails'));
+    // }
+
     public function show(Customer $customer)
     {
         return view('customer.show', compact('customer'));
+    }
+
+    public function edit(Customer $customer)
+    {
+        return view('customer.edit', compact('customer'));
     }
 }

@@ -1,11 +1,11 @@
-<h1>Add New Customer</h1>
+<h1>Edit Customer Details</h1>
 
-<form action="{{ route('customer.store') }}" method="post">
+<form action="#" method="post">
     @csrf
 
     <div>
         <label for="name">Name</label>
-        <input type="text" name="name" value="{{ old('name') }}">
+        <input type="text" name="name" value="{{ $customer->name }}">
 
         @error('name')
             {{ $message }}
@@ -14,12 +14,12 @@
 
     <div>
         <br><label for="email">Email</label>
-        <input type="email" name="email" value="{{ old('email') }}">
+        <input type="email" name="email" value="{{ $customer->email }}">
 
         @error('email')
             {{ $message }}
         @enderror
     </div>
 
-    <br><button type="submit">Add New</button>
+    <br><button type="submit">Update</button>
 </form>
