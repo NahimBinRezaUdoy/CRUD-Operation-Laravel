@@ -22,3 +22,13 @@
 <a href="{{ route('customer.index') }}">
     <button>Home</button>
 </a>
+
+{{-- <a href="/customers/{{ $customer->id }}/delete">
+    <button>Delete</button>
+</a> --}}
+
+<form action="/customers/{{ $customer->id }}/delete" method="post">
+    @csrf
+    @method('DELETE')
+    <br> <button type="submit">Delete</button>
+</form>

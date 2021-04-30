@@ -60,4 +60,11 @@ class CustomerController extends Controller
 
         // return redirect('/customers/' . $customer->id . '/show');
     }
+
+    public function destroy(Customer $customer)
+    {
+        $customer->delete();
+
+        return redirect()->route('customer.index');
+    }
 }
