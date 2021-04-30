@@ -1,6 +1,7 @@
 <h1>Edit Customer Details</h1>
 
-<form action="#" method="post">
+<form action="/customers/{{ $customer->id }}/update" method="post">
+    @method('put')
     @csrf
 
     <div>

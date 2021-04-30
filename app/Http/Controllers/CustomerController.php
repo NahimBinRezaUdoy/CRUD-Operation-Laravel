@@ -46,4 +46,18 @@ class CustomerController extends Controller
     {
         return view('customer.edit', compact('customer'));
     }
+
+    public function update(Customer $customer, Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email',
+        ]);
+
+        $customer->update($data);
+
+        return redirect()->route('customer.show', $customer->id);
+
+        // return redirect('/customers/' . $customer->id . '/show');
+    }
 }

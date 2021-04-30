@@ -23,3 +23,4 @@ Route::get('/customers/create', [CustomerController::class, 'create'])->name('cu
 Route::post('/customers/store', [CustomerController::class, 'store'])->name('customer.store');
 Route::get('/customers/{customer}/show', [CustomerController::class, 'show'])->name('customer.show');
 Route::get('/customers/{customer}/edit', [CustomerController::class, 'edit'])->name('customer.edit');
+Route::put('/customers/{customer}/update', [CustomerController::class, 'update'])->name('customer.update');

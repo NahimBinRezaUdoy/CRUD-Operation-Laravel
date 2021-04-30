@@ -18,3 +18,7 @@
 <a href="/customers/{{ $customer->id }}/edit">
     <button>Edit</button>
 </a>
+
+<a href="{{ route('customer.index') }}">
+    <button>Home</button>
+</a>
