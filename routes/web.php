@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,6 @@ Route::get('/customers/{customer}/show', [CustomerController::class, 'show'])->n
 Route::get('/customers/{customer}/edit', [CustomerController::class, 'edit'])->name('customer.edit');
 Route::put('/customers/{customer}/update', [CustomerController::class, 'update'])->name('customer.update');
 Route::delete('/customers/{customer}/delete', [CustomerController::class, 'destroy'])->name('customer.delete');
+
+
+Route::get('/students', [StudentController::class, 'index'])->name('student.index');
