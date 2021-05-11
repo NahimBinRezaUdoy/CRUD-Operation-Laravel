@@ -17,4 +17,23 @@ class StudentController extends Controller
     {
         return view('student.create');
     }
+
+    public function store()
+    {
+        $data = request()->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'image' => 'required|image',
+        ]);
+
+        $imagePath = request('image')->store('uploads', 'public');
+
+        Student::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'image' => $imagePath,
+        ]);
+
+        return redirect()->route('student.index');
+    }
 }

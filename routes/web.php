@@ -30,3 +30,4 @@ Route::delete('/customers/{customer}/delete', [CustomerController::class, 'destr
 
 Route::get('/students', [StudentController::class, 'index'])->name('student.index');
 Route::get('/students/create', [StudentController::class, 'create'])->name('student.create');
+Route::post('/students/store', [StudentController::class, 'store'])->name('student.store');

@@ -1,7 +1,15 @@
 @extends('layout.app')
 
 @section('content')
+
     <h1 class="mt-5">Students</h1>
+    <a href="/students/create">
+        <button class="btn btn-success btn-sm">
+            Create New Student
+        </button>
+    </a>
+
+
     <table class="table">
         <thead>
             <tr>
@@ -18,7 +26,9 @@
                     <th scope="row">1</th>
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->email }}</td>
-                    <td>{{ $student->image }}</td>
+                    <td>
+                        <img src="/storage/{{ $student->image }}" alt="" style="width:80px; height:80px">
+                    </td>
                     <td>
                         <a href="/students/create">
                             <button class="btn btn-success btn-sm">
