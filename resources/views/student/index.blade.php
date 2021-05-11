@@ -23,24 +23,24 @@
         <tbody>
             @forelse ($students as $student)
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{ $student->id }}</th>
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->email }}</td>
                     <td>
                         <img src="/storage/{{ $student->image }}" alt="" style="width:80px; height:80px">
                     </td>
                     <td>
-                        <a href="/students/create">
+                        <a href="{{ route('student.show', $student) }}">
                             <button class="btn btn-success btn-sm">
-                                Create
+                                Show
                             </button>
                         </a>
-                        <a href="/students/create">
+                        <a href="">
                             <button class="btn btn-primary btn-sm">
                                 Edit
                             </button>
                         </a>
-                        <a href="/students/create">
+                        <a href="">
                             <button class="btn btn-danger btn-sm">
                                 Delete
                             </button>

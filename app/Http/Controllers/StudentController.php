@@ -36,4 +36,9 @@ class StudentController extends Controller
 
         return redirect()->route('student.index');
     }
+
+    public function show(Student $student)
+    {
+        return view('student.show', compact('student'));
+    }
 }
