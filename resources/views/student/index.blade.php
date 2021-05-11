@@ -16,13 +16,25 @@
             @forelse ($students as $student)
                 <tr>
                     <th scope="row">1</th>
-                    <td>Udoy</td>
-                    <td>Udoy@gmail.com</td>
-                    <td>image</td>
+                    <td>{{ $student->name }}</td>
+                    <td>{{ $student->email }}</td>
+                    <td>{{ $student->image }}</td>
                     <td>
-                        <button>
-                            <a href="/students/create">Add New Student</a>
-                        </button>
+                        <a href="/students/create">
+                            <button class="btn btn-success btn-sm">
+                                Create
+                            </button>
+                        </a>
+                        <a href="/students/create">
+                            <button class="btn btn-primary btn-sm">
+                                Edit
+                            </button>
+                        </a>
+                        <a href="/students/create">
+                            <button class="btn btn-danger btn-sm">
+                                Delete
+                            </button>
+                        </a>
                     </td>
                 </tr>
             @empty
