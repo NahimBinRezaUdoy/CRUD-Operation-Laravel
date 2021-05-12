@@ -47,4 +47,24 @@ class StudentController extends Controller
     {
         return view('student.edit', compact('student'));
     }
+
+
+    public function update(Student $student)
+    {
+        $data = request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'image' => 'required',
+        ]);
+
+        $imagePath = request('image')->store('updateUploads', 'public');
+
+        $student->update([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'image' => $imagePath,
+        ]);
+
+        return redirect()->route('student.show', $student);
+    }
 }

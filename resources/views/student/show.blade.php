@@ -13,7 +13,7 @@
                 <p>Created {{ $student->created_at->diffForHumans() }}</p>
                 <p class="lead">
                     <a class="btn btn-primary" href="{{ route('student.index') }}" role="button">Back</a>
-                    <a class="btn btn-success" href="#" role="button">Edit</a>
+                    <a class="btn btn-success" href="{{ route('student.edit', $student) }}" role="button">Edit</a>
                     <a class="btn btn-danger" href="#" role="button">Delete</a>
                 </p>
             </div>
