@@ -32,3 +32,4 @@ Route::get('/students', [StudentController::class, 'index'])->name('student.inde
 Route::get('/students/create', [StudentController::class, 'create'])->name('student.create');
 Route::post('/students/store', [StudentController::class, 'store'])->name('student.store');
 Route::get('/students/{student}/show', [StudentController::class, 'show'])->name('student.show');
+Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('student.edit');

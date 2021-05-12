@@ -15,7 +15,8 @@ class StudentController extends Controller
 
     public function create()
     {
-        return view('student.create');
+        $student = new Student();
+        return view('student.create', compact('student'));
     }
 
     public function store()
@@ -40,5 +41,10 @@ class StudentController extends Controller
     public function show(Student $student)
     {
         return view('student.show', compact('student'));
+    }
+
+    public function edit(Student $student)
+    {
+        return view('student.edit', compact('student'));
     }
 }

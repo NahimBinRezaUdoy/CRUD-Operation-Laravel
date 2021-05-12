@@ -35,7 +35,7 @@
                                 Show
                             </button>
                         </a>
-                        <a href="">
+                        <a href="{{ route('student.edit', $student) }}">
                             <button class="btn btn-primary btn-sm">
                                 Edit
                             </button>
