@@ -14,7 +14,12 @@
                 <p class="lead">
                     <a class="btn btn-primary" href="{{ route('student.index') }}" role="button">Back</a>
                     <a class="btn btn-success" href="{{ route('student.edit', $student) }}" role="button">Edit</a>
-                    <a class="btn btn-danger" href="#" role="button">Delete</a>
+
+                <form action="{{ route('student.destroy', $student) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
                 </p>
             </div>
         </div>

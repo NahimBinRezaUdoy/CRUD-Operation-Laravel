@@ -34,3 +34,4 @@ Route::post('/students/store', [StudentController::class, 'store'])->name('stude
 Route::get('/students/{student}/show', [StudentController::class, 'show'])->name('student.show');
 Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('student.edit');
 Route::put('/students/{student}/update', [StudentController::class, 'update'])->name('student.update');
+Route::delete('/students/{student}/delete', [StudentController::class, 'destroy'])->name('student.destroy');

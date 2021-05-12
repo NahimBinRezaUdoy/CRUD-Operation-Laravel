@@ -31,20 +31,22 @@
                     </td>
                     <td>
                         <a href="{{ route('student.show', $student) }}">
-                            <button class="btn btn-success btn-sm">
+                            <button class="btn btn-success btn-sm m-1">
                                 Show
                             </button>
                         </a>
+
                         <a href="{{ route('student.edit', $student) }}">
-                            <button class="btn btn-primary btn-sm">
+                            <button class="btn btn-primary btn-sm m-1">
                                 Edit
                             </button>
                         </a>
-                        <a href="">
-                            <button class="btn btn-danger btn-sm">
-                                Delete
-                            </button>
-                        </a>
+
+                        <form action="{{ route('student.destroy', $student) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger btn-sm m-1" type="submit">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @empty
