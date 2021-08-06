@@ -9,8 +9,10 @@ class StudentController extends Controller
 {
     public function index()
     {
-        $students = Student::all();
-        return view('student.index', compact('students'));
+        // $students = Student::all();
+        // return view('student.index', compact('students'));
+
+        return Student::all();
     }
 
     public function create()
@@ -24,23 +26,20 @@ class StudentController extends Controller
         $data = request()->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'image' => 'required|image',
         ]);
-
-        $imagePath = request('image')->store('uploads', 'public');
-
         Student::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'image' => $imagePath,
         ]);
 
-        return redirect()->route('student.index');
+        // return redirect()->route('student.index');
     }
 
     public function show(Student $student)
     {
-        return view('student.show', compact('student'));
+        // return view('student.show', compact('student'));
+
+        return $student;
     }
 
     public function edit(Student $student)
@@ -54,24 +53,21 @@ class StudentController extends Controller
         $data = request()->validate([
             'name' => 'required',
             'email' => 'required',
-            'image' => 'required',
+
         ]);
 
-        $imagePath = request('image')->store('updateUploads', 'public');
-
-        $student->update([
+        return $student->update([
             'name' => $data['name'],
             'email' => $data['email'],
-            'image' => $imagePath,
         ]);
 
-        return redirect()->route('student.show', $student);
+        // return redirect()->route('student.show', $student);
     }
 
     public function destroy(Student $student)
     {
-        $student->delete();
+        return $student->delete();
 
-        return redirect()->route('student.index');
+        // return redirect()->route('student.index');
     }
 }

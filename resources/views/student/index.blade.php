@@ -16,7 +16,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
-                <th scope="col">Photo</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -26,9 +25,7 @@
                     <th scope="row">{{ $student->id }}</th>
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->email }}</td>
-                    <td>
-                        <img src="/storage/{{ $student->image }}" alt="" style="width:80px; height:80px">
-                    </td>
+                    
                     <td>
                         <a href="{{ route('student.show', $student) }}">
                             <button class="btn btn-success btn-sm m-1">

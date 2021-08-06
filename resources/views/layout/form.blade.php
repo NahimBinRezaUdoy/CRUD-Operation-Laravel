@@ -21,12 +21,3 @@
     @enderror
 </div>
 
-<div class="form-group">
-    <label for="image">Image</label>
-    <input name="image" type="file" class="form-control" id="image" value="{{ old('image') ?? $student->image }}">
-    @error('image')
-        <div class="text-danger">
-            {{ $message }}
-        </div>
-    @enderror
-</div>
